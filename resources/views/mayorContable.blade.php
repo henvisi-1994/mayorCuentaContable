@@ -18,6 +18,7 @@
             </div>
         </nav>
         <form id="frmDiarioMayor">
+            @csrf
         <div class="row">
             <div class="col">
                 <label for="exampleInputEmail1" class="form-label">Cuenta</label>

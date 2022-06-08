@@ -11,6 +11,7 @@ function buscar(event) {
     var data = new FormData($('#frmDiarioMayor').get(0));
     let html='';
     let i=0;
+    $('#diarios').empty();
     //metodo ajax para buscar los datos en la base de datos  en la base de datos
     $.ajax({
         url: 'mayorCuentaContable',
@@ -35,7 +36,6 @@ function buscar(event) {
             </tr>   `
             });
             $('#diarios').html(html);
-            console.log(data);
         } //fin success
     }); //fin ajax
 }
