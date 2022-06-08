@@ -53,7 +53,7 @@ class DET_DIARIODETController extends Controller
         (SELECT CC_VALOR from DET_DIARIO dd2 WHERE CC_TIPOPE =2 AND  CC_SEQMOV = dd.CC_SEQMOV)as credito, d.CC_DETALLE  from DET_DIARIODET d
         inner join DET_DIARIO dd on d.CC_SEQMOV = dd.CC_SEQMOV
         INNER  JOIN TMA_PLANCTA tp  on tp.CC_SEQCTA = dd.CC_SEQCTA
-        Where  tp.CC_NIVEL2 = " .  $nivel2 . " AND tp.CC_NIVEL3 = " . $nivel3 . " AND tp.CC_NIVEL4 = '" . $nivel4 . "'AND  tp.CC_NIVEL5 = '" . $nivel5 . "' AND tp.CC_NIVEL6 = ' ".$nivel6."' AND tp.CC_AUXILIAR='" . $auxiliar . "'  AND dd.CC_FECMOV  BETWEEN '" . $fecha_inicio . " '   AND  '" . $fecha_fin . "'";
+        Where  tp.CC_NIVEL2 = " .  $nivel2 . " AND tp.CC_NIVEL3 = " . $nivel3 . " AND tp.CC_NIVEL4 = '" . $nivel4 . "'AND  tp.CC_NIVEL5 = '" . $nivel5 . "' AND tp.CC_NIVEL6 = ' ".$nivel6."' AND tp.CC_AUXILIAR='" . $auxiliar . "'  AND dd.CC_FECMOV  BETWEEN '" . $fecha_inicio . " '   AND  '" . $fecha_fin . "' ORDER BY dd.CC_FECMOV  ASC ";
         $mayorContable = DB::select($consulta);
         $nombre_cuenta = $mayorContable[0]->CC_NOMBRE;
         $nivel1 = $mayorContable[0]->CC_NIVEL1;
